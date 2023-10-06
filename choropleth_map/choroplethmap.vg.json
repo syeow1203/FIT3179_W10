@@ -54,7 +54,7 @@
                 },
 
                 {
-                    "calculate": "datum.Birth_Rate",
+                    "calculate": "datum.Birth_Rate + 0",
                     "as": "Cases per 1,000 Population"
                 }
             ],

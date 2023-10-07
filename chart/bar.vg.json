@@ -5,8 +5,9 @@
     "height": 600,
     "title": { "text": "Infant Mortality Rate per 1,000 live births" },
     "data": {
-    "url": "https://raw.githubusercontent.com/syeow1203/FIT3179_W10/main/data/Mortality.csv"
+        "url": "https://raw.githubusercontent.com/syeow1203/FIT3179_W10/main/data/Mortality.csv"
     },
+
     "params":[
         {
             "name": "Infant_Mortality_Rate",
@@ -18,41 +19,43 @@
             "step": 10,
             "name": "Minimum Infant Mortality Rate: "
             }
-            }
-        ],
-        "transform":[
+        }
+    ],
 
-            {"filter": "datum['Infant_Mortality'] > Infant_Mortality_Rate"}
-        ],
+    "transform":[
+
+        {"filter": "datum['Infant_Mortality'] > Infant_Mortality_Rate"}
+    ],
 
     "layer":[
         {
-
-        "mark": "bar",
-        "encoding": {
+            "mark": "bar",
+            "encoding": {
             
-        "x": {
-            "field": "Infant_Mortality", 
-            "type": "quantitative",
-            "scale":{"domain": [0, 84]},
-            "axis": {"domain": false, "grid": false, "ticks": false}
+            "x": {
+
+                "field": "Infant_Mortality", 
+                "type": "quantitative",
+                "scale":{"domain": [0, 84]},
+                "axis": {"domain": false, "grid": false, "ticks": false}
+            },
+            
+            "y": { 
+
+                "field": "Country", 
+                "type": "nominal", "sort": "-x", "axis": {"domain": false, "grid": false, "ticks": false}
+            },
+
+            "tooltip": [
+
+                {"field": "Country", "type": "nominal", "title": "Country"},
+                {"field": "Infant_Mortality", "type": "quantitative"}
+            
+            ]
+        }
     },
-
-        "y": { 
-            "field": "Country", 
-            "type": "nominal", "sort": "-x", "axis": {"domain": false, "grid": false, "ticks": false}
-        },
-
-        "tooltip": [
-
-            {"field": "Country", "type": "nominal", "title": "Country"},
-            {"field": "Infant_Mortality", "type": "quantitative"}
-        
-        ]
-    }
-},
     
-{
+    {
         "mark":{
 
             "type": "text",
@@ -60,17 +63,19 @@
             "baseline": "middle",
             "dx": 3,
             "fontSize": 9
-            },
-
-            "encoding": {
+        },
+        
+        "encoding": {
 
             "text": {"field": "Infant_Mortality", 
             "type": "quantitative","format": ".2f"},
-            "y": { "field": "Country", "type": "nominal",
-            "sort": {
+            "y": {
+                
+                "field": "Country", "type": "nominal",
+                "sort": {
 
-                "field": "Infant_Mortality",
-                "order": "ascending"}},
+                    "field": "Infant_Mortality",
+                    "order": "ascending"}},
 
             "x": { 
                 
@@ -78,9 +83,8 @@
                 "type": "quantitative",
                 "scale":{"domain": [0, 84]}}
            
+            }
         }
-    }
-]
-    
+    ]
     
 }

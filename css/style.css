@@ -19,11 +19,11 @@
 #bar_chart {
 	top:50px;
 	bottom: 50px; 
-	left: 300px;
+	left: 200px;
 	right: 100px;
 	height: 700px;
 	width: 800px;
 	font-weight: bold;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 15px;
 }

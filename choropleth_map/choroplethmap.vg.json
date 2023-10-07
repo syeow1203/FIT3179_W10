@@ -77,6 +77,22 @@
                 ]
             }
 
+        },
+
+        {
+            "mark": {
+                "type": "text", "color": "black", "fontSize": 9, "dx": 6, "xOffset": -80, "align": "left"
+            },
+
+            "encoding": {
+                "text": {
+                    "value": ["Niger has the highest", "birth rate among all the", "countries standing at", "46.08 %."]
+                },
+
+                "opacity": {
+                    "value": 0.02
+                }
+            }
         }
     ],
 

@@ -13,11 +13,11 @@
             "name": "Infant_Mortality_Rate",
             "value": 0,
             "bind": {
-            "input": "range",
-            "min": 1,
-            "max": 84,
-            "step": 10,
-            "name": "Minimum Infant Mortality Rate: "
+                "input": "range",
+                "min": 1,
+                "max": 84,
+                "step": 10,
+                "name": "Minimum Infant Mortality Rate: "
             }
         }
     ],
@@ -31,58 +31,61 @@
         {
             "mark": "bar",
             "encoding": {
-            
-            "x": {
+                "x": {
+                    "field": "Infant_Mortality", 
+                    "type": "quantitative",
+                    "scale":{"domain": [0, 84]},
+                    "axis": {"domain": false, "grid": false, "ticks": false}
+                },
+                
+                "y": { 
 
-                "field": "Infant_Mortality", 
-                "type": "quantitative",
-                "scale":{"domain": [0, 84]},
-                "axis": {"domain": false, "grid": false, "ticks": false}
-            },
-            
-            "y": { 
+                    "field": "Country", 
+                    "type": "nominal", "sort": "-x", "axis": {"domain": false, "grid": false, "ticks": false}
+                },
+                
+                "tooltip": [
 
-                "field": "Country", 
-                "type": "nominal", "sort": "-x", "axis": {"domain": false, "grid": false, "ticks": false}
-            },
-
-            "tooltip": [
-
-                {"field": "Country", "type": "nominal", "title": "Country"},
-                {"field": "Infant_Mortality", "type": "quantitative"}
-            
-            ]
-        }
-    },
-    
-    {
-        "mark":{
-
-            "type": "text",
-            "align": "left",
-            "baseline": "middle",
-            "dx": 6,
-            "fontSize": 9
+                    {"field": "Country", "type": "nominal", "title": "Country"},
+                    {"field": "Infant_Mortality", "type": "quantitative"}
+                
+                ]
+            }
         },
         
-        "encoding": {
+        {
+            "mark":{
 
-            "text": {"field": "Infant_Mortality", 
-            "type": "quantitative","format": ".2f"},
-            "y": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 6,
+                "fontSize": 9
+            },
+        
+            "encoding": {
+
+                "text": {
+                    "field": "Infant_Mortality", 
+                    "type": "quantitative","format": ".2f"
+                },
                 
-                "field": "Country", "type": "nominal",
-                "sort": {
-
-                    "field": "Infant_Mortality",
-                    "order": "ascending"}},
-
-            "x": { 
+                "y": {
                 
-                "field": "Infant_Mortality", 
-                "type": "quantitative",
-                "scale":{"domain": [0, 84]}}
-           
+                    "field": "Country", "type": "nominal",
+                    "sort": {
+                        "field": "Infant_Mortality",
+                        "order": "ascending"
+                    }
+                },
+
+                "x": { 
+                    
+                    "field": "Infant_Mortality", 
+                    "type": "quantitative",
+                    "scale":{"domain": [0, 84]}
+                }
+            
             }
         }
     ]
